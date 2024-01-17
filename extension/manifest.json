@@ -1,0 +1,19 @@
+{
+  "name": "CyberGuard",
+  "version": "1.0.01",
+  "description": "A Fraud Prevention plugin",
+  "permissions": ["activeTab","declarativeContent", "storage", "webNavigation"],
+  "background": {
+    "service_worker": "js/bg-loader.js"
+  },
+  "action": {
+    "default_popup": "plugin_ui.html"
+  },
+  "content_scripts":[
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["js/features.js"]
+    }
+  ],
+  "manifest_version": 3
+}
